@@ -31,16 +31,12 @@ request(url)
     })
   })
 
-const formData = {
-  file: fs.createReadStream(__dirname + '/answer.json'),
-}
 
 request.post({
   url: urlSolution,
   formData: {
     file: fs.createReadStream(__dirname + '/answer.json'),
     filename: 'answer.json',
-    filetype: 'json'
   },
 }, (err, res, body) => {
   if(err) throw err
